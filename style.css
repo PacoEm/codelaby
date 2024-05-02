@@ -1,0 +1,89 @@
+@font-face {
+    font-family: strokes_number;
+    src: url(./assets/Ubuntu_Mono/UbuntuMono-Regular.ttf);
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: #888787;
+}
+
+#global_flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#start_screen{
+    position: absolute;
+    border: black solid 1px;
+}
+#end_screen{
+    position: absolute;
+    border: rgb(255, 255, 255) solid 1px;
+    visibility: hidden;
+}
+#start_level{
+    position: absolute;
+
+}
+
+#content{
+    width: 770px;
+}
+
+/* Divs affichés dans la grille */
+.grid_div_0, .grid_div_1, .grid_div_2, .grid_div_3, .grid_div_4{
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    margin-left: 2px;
+    margin-right: 2px;
+}
+.grid_div_0{
+    /* couleur neutre */
+    background: #969696;
+}
+.grid_div_1{
+    /* couleur de user */
+    background: rgb(43, 43, 43);
+}
+.grid_div_2{
+    /* couleur de sortie */
+    background: rgb(236, 236, 236);
+}
+.grid_div_3{
+    /* couleur des obstacles */
+    background: rgb(155, 34, 34);
+}
+.grid_div_4{
+    /* couleur des bords */
+    background: rgba(184, 184, 184, 0);
+}
+
+#game_container{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    /* background: #5f5f5f; */
+}
+#strokes_container{
+}
+#strokes_viewport{
+    display: flex;
+    align-items: end;
+    width: 40px;
+    height: 637px;
+}
+#per_cent_strokes{
+    width: 100%;
+    height: 100%;
+    transition: ease 0.2s;
+    background: rgb(129, 81, 81);
+    float: bottom;
+}
