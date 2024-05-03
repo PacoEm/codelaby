@@ -59,7 +59,7 @@ if (strokes_played === 0 && trial_number === 0) {
   Start_infos(level_number, permit_strokes, winner);
   setTimeout(() => {
     winner = "continue";
-  }, 3000);
+  }, 5000);
 }
 
 // === USER START POSITION ===
@@ -109,7 +109,7 @@ document.addEventListener("keydown", (e) => {
           Start_infos(level_number, permit_strokes);
           setTimeout(() => {
             winner = "continue";
-          }, 3000);
+          }, 5000);
         }
         // OOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
       } else {

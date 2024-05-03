@@ -1,7 +1,9 @@
 @font-face {
-    font-family: strokes_number;
-    src: url(./assets/Ubuntu_Mono/UbuntuMono-Regular.ttf);
+    font-family: kodemono;
+    src: url(./assets/fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf);
 }
+
+
 
 *{
     box-sizing: border-box;
@@ -10,7 +12,8 @@
 }
 
 body{
-    background: #888787;
+    background: #2d2b33;
+    /* background: linear-gradient(#6b4720, #3f87a6); */
 }
 
 #global_flex{
@@ -29,7 +32,14 @@ body{
 }
 #start_level{
     position: absolute;
-
+    font-family: kodemono;
+    font-size: 28px;
+    color: yellow;
+    background: black;
+    border-radius: 30px;
+    padding: 10px 18px;
+    /* border-right: 4px solid yellow;
+    padding-right: 4px; */
 }
 
 #content{
@@ -43,22 +53,32 @@ body{
     height: 60px;
     margin-left: 2px;
     margin-right: 2px;
+    border-radius: 20px;
+    /* box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.1); */
 }
 .grid_div_0{
     /* couleur neutre */
-    background: #969696;
+    /* background: url(./assets/touche_neutre.png) center / cover no-repeat; */
+    border: solid 4px rgba(92, 207, 92, 0.2);
 }
 .grid_div_1{
     /* couleur de user */
-    background: rgb(43, 43, 43);
+    /* background: url(./assets/touche_user.png) center / cover no-repeat; */
+    background-color: rgb(40, 55, 255);
+    border: solid 4px rgb(132, 162, 224);
+
 }
 .grid_div_2{
     /* couleur de sortie */
-    background: rgb(236, 236, 236);
+    /* background: url(./assets/touche_sortie.png) center / cover no-repeat; */
+    background-color: rgb(22, 153, 61);
+    border: solid 4px rgb(138, 250, 73);
 }
 .grid_div_3{
     /* couleur des obstacles */
-    background: rgb(155, 34, 34);
+    /* background: url(./assets/touche_obstacle.png) center / cover no-repeat; */
+    background-color: rgb(173, 41, 7);
+    border: solid 4px rgb(231, 62, 20);
 }
 .grid_div_4{
     /* couleur des bords */
@@ -73,8 +93,13 @@ body{
     /* background: #5f5f5f; */
 }
 #strokes_container{
+    border-radius: 20px;
 }
 #strokes_viewport{
+    overflow: hidden;
+    border: solid 4px rgba(255, 251, 5, 0.801);
+    /* border: solid 4px rgba(170, 209, 170, 0.801); */
+    border-radius: 20px;
     display: flex;
     align-items: end;
     width: 40px;
@@ -84,6 +109,7 @@ body{
     width: 100%;
     height: 100%;
     transition: ease 0.2s;
-    background: rgb(129, 81, 81);
+    background: rgba(255, 255, 0, 0.767);
     float: bottom;
+
 }
