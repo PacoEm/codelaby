@@ -1,0 +1,304 @@
+@font-face {
+    font-family: Kode_Mono;
+    src: url("./assets/fonts/Kode_Mono/KodeMono-VariableFont_wght.ttf");
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+#gradient{
+    z-index: -1;
+    position: absolute;
+    width: 100vw;
+    height: 80vh;
+    background: linear-gradient(180deg, rgba(8, 8, 8, 0.527), rgba(255, 255, 255, 0));;
+}
+/* #screen{
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    background: #f7a3a3;
+} */
+
+#global_container{
+    background: rgb(138, 138, 138);
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+#container_1{
+    width: 340px;
+    height: 440px;
+    
+    font-family: Kode_Mono;
+    font-size: 1.8rem;
+}
+#container_2{
+    width: 340px;
+    height: 440px;
+    margin-left: 40px;
+
+    /* background: #8f6b6b; */
+
+    font-family: Kode_Mono;
+    font-size: 1.8rem;
+}
+
+/* ================================ */
+#title{
+    margin: 10px;
+}
+.control_container{
+    display: flex;
+    align-items: center;
+    margin: 8px;
+}
+
+.key_name{
+    font-size: 1.8em;
+    border: 2px solid black;
+    padding: 0px 18px 0px 18px;
+    border-radius: 20px;
+}
+.stroke{
+    display: flex;
+    align-items: center;
+    float: left;
+    width: 100%;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.line{
+    height: 2px;
+
+    background: black;
+}
+.point{
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #000;
+    opacity: 0;
+}
+.texts{
+    opacity: 0;
+}
+
+
+/* +++++++++++++++++++++++++++ */
+#creator{
+    justify-content: center;
+    font-size: 0.8em;
+    text-align: right;
+    margin-top: 44px;
+    margin-bottom: 44px;
+
+}
+#corner_line{
+    width: 60px;
+    height: 0px;
+    border-radius: 20px 0px 0px 0px ;
+    margin-top: 30px;
+}
+#echap_line{
+    display: flex;
+    justify-content: end;
+}
+#echap_point{
+    margin-top: -89px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background: #000;
+    opacity: 0;
+    transform: translate(6px, 116px);
+}
+#echap{
+    border: solid 2px black;
+    font-size: 1.6em;
+}
+#start{
+    text-align: right;
+    /* transform: translateX(-4px); */
+    margin-top: 6px;
+}
+#neon_0, #neon_1, #neon_2, #neon_3, #neon_4, #neon_5{
+    opacity: 0;
+}
+
+/* Éléments animés xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+#title {
+    opacity: 0;
+    transform: scale(2) translate(25%);
+    transform-origin: 0%;
+    animation: anim_title 2s ease-in 0.4s 1 normal forwards;
+}
+#z_key, #s_key, #q_key,#d_key, #echap{
+    opacity: 0;
+    transform: scale(2) translate(25%);
+    transform-origin: 0%;
+}
+#z_key{
+    animation: anim_title 2s ease-in 0.5s 1 normal forwards;
+}
+#s_key{
+    animation: anim_title 2s ease-in 0.6s 1 normal forwards;
+}
+#q_key{
+    animation: anim_title 2s ease-in 0.7s 1 normal forwards;
+}
+#d_key{
+    animation: anim_title 2s ease-in 0.8s 1 normal forwards;
+}
+#echap{
+    animation: anim_title 2s ease-in 0.95s 1 normal forwards;
+}
+#corner_line{
+    animation: anim_corner_line 0.5s linear 1.2s 1 normal forwards;
+}
+.line{
+    animation: anim_lines 0.5s linear 1.2s 1 normal forwards;
+}
+.texts{
+    animation: anim_texts 1s linear 2s 1 normal forwards;
+}
+.point{
+    animation: anim_points 0.5s linear 1.2s 1 normal forwards;
+}
+#echap_point{
+    animation: anim_echap_point 0.5s linear 1.2s 1 normal forwards;
+}
+#neon_0{
+    animation: anim_neon 0.5s linear 2.7s 1 normal forwards;
+}
+#neon_1{
+    animation: anim_neon 0.5s linear 2.8s 1 normal forwards;
+}
+#neon_2{
+    animation: anim_neon 0.5s linear 3.2s 1 normal forwards;
+}
+#neon_3{
+    animation: anim_neon 0.5s linear 2.7s 1 normal forwards;
+}
+#neon_4{
+    animation: anim_neon 0.5s linear 3.5s 1 normal forwards;
+}
+#neon_5{
+    animation: anim_neon 0.5s linear 3.1s 1 normal forwards;
+}
+#screen{
+    /* animation: anim_body_color 30s linear 0s infinite alternate forwards;
+    animation-fill-mode: both; */
+}
+
+/* Animations xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+@keyframes anim_title {
+    15%{
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1); 
+        opacity: 1;
+    }
+}
+@keyframes anim_lines {
+    0%{
+        width: 0%
+    }
+    100%{
+        width: 100%;
+    }
+}
+@keyframes anim_corner_line {
+    0%{
+        height: 0px;
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+            }
+    100%{
+        border-left: 2px solid black;
+        border-top: 2px solid black;
+    
+        height: 194px;
+    }
+}
+@keyframes anim_texts {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes anim_points {
+    0%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes anim_echap_point {
+    0%{
+        margin-top: -89px;
+        opacity: 0;
+    }
+    100%{
+        margin-top: 100px;
+        opacity: 1;
+    }
+}
+@keyframes anim_neon {
+    0%{
+      opacity: 1;  
+    }
+    50%{
+        opacity: 0;
+    }
+    55%{
+        opacity: 1;
+    }
+    60%{
+        opacity: 0;
+    }
+    80%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes anim_body_color {
+    0%{
+        background: rgb(138, 138, 138);
+    }
+    20%{
+        background: #be6e6e;
+    }
+    40%{
+        background: #6a8fa7;
+    }
+    60%{
+        background: #66aab6;
+    }
+    80%{
+        background: #a984b3;
+    }
+    100%{
+        background: #c4c3c3;
+    }
+}
+
+
+  
+  
+
+

@@ -9,18 +9,9 @@ import { Calculate_stroke_size } from "../functions/calc_stroke_size.js";
 import { Start_infos } from "../functions/display_level_start.js";
 import { Congratulate } from "../functions/display_end.js";
 
-const start_image = document.getElementById("start_screen");
+const start_image = document.getElementById("screen");
+const level_infos = document.getElementById("start_level");
 
-// ++++++++++++++++++++++++++++++++++++++++
-start_image.style.visibility = "hidden";
-// ++++++++++++++++++++++++++++++++++++++++
-
-// === THE USER CAN BEGIN TO PLAY BY PRESSING THE ECAHP KEY ===
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    start_image.style.visibility = "hidden";
-  }
-});
 // === GAME CONTAINER EMPLACEMENT ===
 let game_content = document.getElementById("content");
 
@@ -50,17 +41,28 @@ let strokes_played = 0;
 // === HAVE THE WINNER WON OR LOSED ? ===
 let winner;
 
+// ++++++++++++++++++++++++++++++++++++++++
+start_image.style.visibility = "visible";
+level_infos.style.visibility = "hidden";
+// ++++++++++++++++++++++++++++++++++++++++
+
+// === THE USER CAN BEGIN TO PLAY BY PRESSING THE ECAHP KEY ===
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    start_image.style.visibility = "hidden";
+    Display_level(current_level);
+    // === IF THE LEVEL STARTS ===
+    if (strokes_played === 0 && trial_number === 0) {
+      Start_infos(level_number, permit_strokes, winner);
+      setTimeout(() => {
+        winner = "continue";
+      }, 5000);
+    }
+  }
+});
+
 // 2 - INTIAL DISPLAY OF THE LEVEL
 game_content.innerHTML = '<div id="content""></div>';
-Display_level(current_level);
-
-// === IF THE LEVEL STARTS ===
-if (strokes_played === 0 && trial_number === 0) {
-  Start_infos(level_number, permit_strokes, winner);
-  setTimeout(() => {
-    winner = "continue";
-  }, 5000);
-}
 
 // === USER START POSITION ===
 export let u_row = user_location[level_number][0];
