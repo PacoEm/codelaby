@@ -1,5 +1,11 @@
 const starter = document.getElementById("start_level");
 
+function sound() {
+  const audio = new Audio();
+  audio.src = "../assets/sounds/one_beep.mp3";
+  audio.play();
+}
+
 export function Start_infos(level_number, permit_strokes) {
   starter.style.visibility = "visible";
   let i = 0;
@@ -15,6 +21,9 @@ export function Start_infos(level_number, permit_strokes) {
 
   function loop(text) {
     starter.textContent += text[i];
+    if (text[i] != " ") {
+      sound();
+    }
     i++;
 
     return text[i];

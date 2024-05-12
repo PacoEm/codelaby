@@ -14,14 +14,18 @@
     position: absolute;
     width: 100vw;
     height: 80vh;
-    background: linear-gradient(180deg, rgba(8, 8, 8, 0.527), rgba(255, 255, 255, 0));;
+    background: linear-gradient(180deg, rgba(8, 8, 8, 0.527), rgba(255, 255, 255, 0));
 }
 #screen{
     /* display: flex; */
     position: absolute;
     background: rgb(151, 151, 119);
+    background-image: url(./assets/rect_background.png);
     width: 100vw;
     height: 100vh;
+
+    animation: anim_background
+     2s ease-in 0.5s 1 normal forwards;
 }
 
 #global_container{
@@ -29,17 +33,16 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+    /* background: rgb(151, 151, 119); */
     border-radius: 20px;
-    /* background-image: url(./assets/start_background.png); */
+    background: linear-gradient(180deg,  rgb(134, 134, 106),  rgba(151, 151, 119, 1));
 
     position: absolute;
     justify-content: center;
     align-items: center;
     width: 900px;
     height: 700px;
-    box-shadow: 2px 2px 8px rgba(114, 105, 87, 0.6);
-    /* border: solid 1px maroon; */
+    box-shadow: 2px 2px 8px rgba(114, 105, 87, 1);
 }
 
 
@@ -206,10 +209,6 @@
 #neon_5{
     animation: anim_neon 0.5s linear 3.1s 1 normal forwards;
 }
-#screen{
-    /* animation: anim_body_color 30s linear 0s infinite alternate forwards;
-    animation-fill-mode: both; */
-}
 
 /* Animations xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
 @keyframes anim_title {
@@ -289,26 +288,18 @@
         opacity: 1;
     }
 }
-@keyframes anim_body_color {
-    0%{
-        background: rgb(138, 138, 138);
-    }
-    20%{
-        background: #be6e6e;
-    }
-    40%{
-        background: #6a8fa7;
-    }
-    60%{
-        background: #66aab6;
-    }
-    80%{
-        background: #a984b3;
-    }
-    100%{
-        background: #c4c3c3;
-    }
+
+#screen{
+    animation: slidein 100s linear 0s infinite normal forwards;
 }
+@keyframes slidein {
+    from {background-position: top;
+}
+    to {background-position: -1000px 0px;
+}
+
+
+
 
 
   

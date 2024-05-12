@@ -48,7 +48,7 @@ level_infos.style.visibility = "hidden";
 
 // === THE USER CAN BEGIN TO PLAY BY PRESSING THE ECAHP KEY ===
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
+  if ((e.key === "Escape") & (level_number < levels_array.length)) {
     start_image.style.visibility = "hidden";
     Display_level(current_level);
     // === IF THE LEVEL STARTS ===
